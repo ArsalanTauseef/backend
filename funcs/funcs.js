@@ -1,4 +1,4 @@
-const { nanoid } = require("nanoid");
+// const { nanoid } = require("nanoid");
 const arrayOfContacts = [];
 
 const getData = () => {
@@ -7,7 +7,7 @@ const getData = () => {
 
 const addContact = (paramContact) => {
   const addedContacts = {
-    id: nanoid(),
+    id: "temp-id",
     ...paramContact,
   };
   arrayOfContacts.push(addedContacts);
