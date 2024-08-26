@@ -5,8 +5,7 @@ const {
   addContact,
   updateContacts,
   deleteContact,
-} = require("./functions/functions");
-
+} = require("./funcs/funcs")
 var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
