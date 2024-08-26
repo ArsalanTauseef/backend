@@ -13,9 +13,6 @@ app.use(bodyParser.json());
 var cors = require("cors");
 app.use(cors());
 
-app.get('/', (req, res) => {
-  res.send('Hi, welcome to my backend server deployed in vercel.');
-});
 
 app.get("/api/mycontacts", (req, res) => {
   const arrayOfContacts = getData();
