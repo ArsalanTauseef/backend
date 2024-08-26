@@ -7,7 +7,7 @@ const getData = () => {
 
 const addContact = (paramContact) => {
   const addedContacts = {
-    id: "temp-id",
+    id: nanoid(),
     ...paramContact,
   };
   arrayOfContacts.push(addedContacts);

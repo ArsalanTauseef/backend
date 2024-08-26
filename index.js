@@ -7,9 +7,10 @@ const {
   updateContacts,
   deleteContact,
 } = require("./funcs/funcs");
-// var bodyParser = require("body-parser");
-// app.use(bodyParser.urlencoded({ extended: false }));
-// app.use(bodyParser.json());
+
+app.use(express.json()) // for parsing application/json
+app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+
 var cors = require("cors");
 app.use(cors());
 
