@@ -1,21 +1,22 @@
-const express = require("express");
-const app = express();
-const port = 4000;
-const {
+import express from "express";
+import cors from "cors";
+import {
   getData,
   addContact,
   updateContacts,
   deleteContact,
-} = require("./funcs/funcs");
+} from "./funcs/funcs.js";
 
-app.use(express.json()) // for parsing application/json
-app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+const app = express();
 
-var cors = require("cors");
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 app.use(cors());
+const port = 4000;
 
-app.get('/', (req, res) => {
-  res.send('Hi, welcome to my backend server deployed in vercel.');
+app.get("/", (req, res) => {
+  res.send("Hi, welcome to my backend server deployed in vercel.");
 });
 
 app.get("/api/mycontacts", (req, res) => {
@@ -52,10 +53,10 @@ app.delete("/api/deletecontact/:id", (req, res) => {
   const id = req.params.id;
   // Create a contact object with the id
   const paramContact = { id: id };
-  console.log(paramContact)
+  console.log(paramContact);
   // Call the deleteContact function
   const deletedContact = deleteContact(paramContact);
-  console.log(deletedContact)
+  console.log(deletedContact);
   if (!deletedContact) {
     res.status(404).send("Contact not found");
     return;
@@ -67,8 +68,8 @@ app.delete("/api/deletecontact/:id", (req, res) => {
   });
 });
 
-
-
 app.listen(port, () => {
-  console.log(`The server is running on http://localhost:${port}/api/mycontacts`);
+  console.log(
+    `The server is running on http://localhost:${port}/api/mycontacts`
+  );
 });

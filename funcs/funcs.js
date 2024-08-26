@@ -1,11 +1,11 @@
 import { nanoid } from 'nanoid';
 const arrayOfContacts = [];
 
-const getData = () => {
+export const getData = () => {
   return arrayOfContacts;
 };
 
-const addContact = (paramContact) => {
+export const addContact = (paramContact) => {
   const addedContacts = {
     id: nanoid(),
     ...paramContact,
@@ -14,7 +14,7 @@ const addContact = (paramContact) => {
   return addedContacts;
 };
 
-const updateContacts = (paramContact) => {
+export const updateContacts = (paramContact) => {
   const returnIndexOfContacts = arrayOfContacts.findIndex(
     (indexOfTheArrayOfContacts) =>
       indexOfTheArrayOfContacts.id === paramContact.id
@@ -25,7 +25,7 @@ const updateContacts = (paramContact) => {
   return paramContact;
 };
 
-const deleteContact = (paramContact) => {
+export const deleteContact = (paramContact) => {
   const returnIndexOfContacts = arrayOfContacts.findIndex(
     (indexOfTheArrayOfContacts) =>
       indexOfTheArrayOfContacts.id === paramContact.id
@@ -37,4 +37,4 @@ const deleteContact = (paramContact) => {
 };
 
 
-module.exports = {getData, addContact, updateContacts, deleteContact}
+// module.exports = {getData, addContact, updateContacts, deleteContact}
