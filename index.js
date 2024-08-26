@@ -1,12 +1,6 @@
 const express = require("express");
 const app = express();
 const port = 3000;
-const {
-  getData,
-  addData,
-  updateNewProducts,
-  deleteData,
-} = require("./funcs/funcs");
 var bodyParser = require("body-parser");
 var cors = require("cors");
 
